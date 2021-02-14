@@ -36,8 +36,8 @@ const Categories = () => {
 
 	return (
 		<div>
-			<div className="feature-heading my-3">
-				<h2>Featured Categories</h2>
+			<div className="feature-heading mt-5">
+				<h2 className="mb-4">Featured Categories</h2>
 			</div>
 
 			<ul id="autoWidth" className="container">

@@ -5,6 +5,7 @@ import './App.css';
 import Cart from './components/Cart';
 import Home from './components/Home';
 import Nav from './components/Nav';
+import ProductDetails from './components/ProductDetails';
 import store from './store';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 				<Nav />
 				<Route path="/" exact component={Home} />
 				<Route path="/cart" exact component={Cart} />
+        <Route path="/details:id" exact component={ProductDetails} />
 			</Router>
 		</Provider>
 	);

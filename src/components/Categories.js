@@ -35,18 +35,18 @@ const Categories = () => {
 	];
 
 	return (
-		<div>
+		<div className="">
 			<div className="feature-heading mt-5">
 				<h2 className="mb-4">Featured Categories</h2>
 			</div>
 
-			<ul id="autoWidth" className="container">
+			<ul id="autoWidth" className="row">
 				{content.map((item, index) => (
 					<li className="item" key={index}>
 						<div className="feature-box">
 							<img src={item.image} alt="Featured" />
 						</div>
-						<span>{item.title}</span>
+						<span className="mt-3">{item.title}</span>
 					</li>
 				))}
 			</ul>

@@ -40,8 +40,8 @@ const Header = () => {
 				<div key={index} style={{ background: `url(${item.image}) no-repeat center center` }}>
 					<div className="slider-content">
                     <p className="lead">{item.description}</p>
-						<h1 className="mb-4">{item.title}</h1>	
-						<button className="btn btn-danger">{item.button}</button>
+						<h2 className="mb-4 banner-text">{item.title}</h2>	
+						<button className="btn btn-danger banner-button">{item.button}</button>
 					</div>
 				</div>
 			))}

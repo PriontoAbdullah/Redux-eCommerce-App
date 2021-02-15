@@ -9,7 +9,7 @@ import banner4 from '../images/Slider_04.jpg';
 const Header = () => {
 	const content = [
 		{
-			image:  banner1 ,
+			image: banner1,
 			title: `30% off With Promo Code`,
 			description: 'LIMITED OFFER',
 			button: 'SHOP NOW'
@@ -39,9 +39,16 @@ const Header = () => {
 			{content.map((item, index) => (
 				<div key={index} style={{ background: `url(${item.image}) no-repeat center center` }}>
 					<div className="slider-content">
-                    <p className="lead">{item.description}</p>
-						<h2 className="mb-4 banner-text">{item.title}</h2>	
-						<button className="btn btn-danger banner-button">{item.button}</button>
+						<p className="lead">{item.description}</p>
+						<h2 className="mb-4 banner-text">{item.title}</h2>
+						<button
+							className="btn btn-danger banner-button"
+							onClick={() => {
+								window.scrollTo(0, 800);
+							}}
+						>
+							{item.button}
+						</button>
 					</div>
 				</div>
 			))}

@@ -225,7 +225,7 @@ a {
 }
 
 .details-image img {
-	width: 100%;
+	width: 90%;
 	height: auto;
 	margin-bottom: 25px;
 }
@@ -258,8 +258,8 @@ a {
 .dec,
 .inc,
 .quantity {
-	width: 60px;
-	height: 60px;
+	width: 80px;
+	height: 55px;
 	border: 1px solid silver;
 	display: flex;
 	align-items: center;
@@ -286,6 +286,11 @@ a {
 	font-size: 18px;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+select {
+	border: none;
+	outline: none;
 }
 
 .details-p {

@@ -30,8 +30,8 @@ const Footer = () => {
 			))}
 
 			<footer>
-				<span class="copyright">Copyright 2021 - Prionto Abdullah</span>
-				<div class="subscribe order-first order-md-last">
+				<span className="copyright">Copyright 2021 - Prionto Abdullah</span>
+				<div className="subscribe order-first order-md-last">
 					<form>
 						<input type="email" placeholder="Example@gmail.com" required />
 						<input type="submit" value="Subscribe" />

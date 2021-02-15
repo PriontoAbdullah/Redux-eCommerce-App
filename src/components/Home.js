@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Categories from './Categories';
-import Footer from './Footer';
 import Header from './Header';
 import Products from './Products';
 import SaleOffer from './SaleOffer';
 
 const Home = () => {
-    return (
-        <div>
-            <Header />
-            <Categories />
-            <Products />
-            <SaleOffer />
-            <Footer />
-        </div>
-    );
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
+	return (
+		<div>
+			<Header />
+			<Categories />
+			<Products />
+			<SaleOffer />
+		</div>
+	);
 };
 
 export default Home;

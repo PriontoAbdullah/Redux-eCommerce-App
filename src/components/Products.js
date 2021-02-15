@@ -17,7 +17,7 @@ const Products = () => {
 					<div className="col-md-3 col-sm-6 all-products" key={product.id}>
 						<div className="product">
 							<div className="product-img">
-								<Link to={`/details/${product.id}`}>
+								<Link to={`details/${product.id}`}>
 									<img src={`/images/${product.image}`} alt="product name" />
                                     <div className="show">View Details</div>
 								</Link>

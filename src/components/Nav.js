@@ -2,10 +2,14 @@ import React from 'react';
 import { BsFillBagFill } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
 import { FcSearch } from 'react-icons/fc';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.webp';
 
 const Nav = () => {
+
+	const {totalQuantity} = useSelector(state => state.CartReducer);
+
 	return (
 		<div className="nav">
 			<div className="container">
@@ -21,7 +25,7 @@ const Nav = () => {
 							<FaUserAlt className="basket-icon mr-3" />
 							<Link to="/cart">
 								<BsFillBagFill className="basket-icon" />
-								<span>4</span>
+								<span>{totalQuantity}</span>
 							</Link>
 						</div>
 					</div>

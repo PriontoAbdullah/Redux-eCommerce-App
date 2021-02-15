@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BsDash, BsPlus } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import banner from '../images/custom-banner.jpg';
 
 const ProductDetails = () => {
 	useEffect(() => {
@@ -35,12 +36,12 @@ const ProductDetails = () => {
 	return (
 		<div className="container mt-5">
 			<div className="row">
-				<div className="col-6">
+				<div className="col-md-6">
 					<div className="details-image">
-						<img src={`/images/${product.image}`} alt="" />
+						<img src={`/images/${product.image}`} alt="product" />
 					</div>
 				</div>
-				<div className="col-6">
+				<div className="col-md-6">
 					<div className="details-name">{product.name}</div>
 					<div className="details-p">
 						{product.desc}
@@ -56,7 +57,7 @@ const ProductDetails = () => {
 						</span>
 					</div>
 
-					<div className="details-info mt-4">
+					<div className="details-info my-4">
 						<div className="details-incDec">
 							<span className="dec" onClick={decQuantity}>
 								<BsDash />
@@ -79,9 +80,13 @@ const ProductDetails = () => {
 								className="btn-default ml-4"
 								onClick={() => dispatch({ type: 'ADD_TO_CART', payload: { product, quantity, size } })}
 							>
-								add to cart
+								Add to cart
 							</button>
 						</div>
+					</div>
+
+					<div className="my-4">
+						<img src={banner} alt="banner" width="100%" />
 					</div>
 				</div>
 			</div>

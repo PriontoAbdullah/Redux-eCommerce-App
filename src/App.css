@@ -218,6 +218,29 @@ a {
 	font-size: 16px;
 }
 
+.success-mgs {
+	animation: show-hide 1.5s ease-in-out 1 forwards;
+	font-style: italic;
+}
+
+@keyframes show-hide {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 .details-image {
 	width: 100%;
 	height: auto;
@@ -502,12 +525,19 @@ footer {
 		padding: 0 30px;
 	}
 
-	.col-4 {
+	.col-md-4 {
 		width: 25%;
 	}
 
-	.col-8 {
+	.col-md-8 {
 		width: 75%;
+	}
+
+	.col-md-3,
+	.col-md-2,
+	.col-md-1 {
+		text-align: center;
+		margin-bottom: 10px;
 	}
 
 	.product {

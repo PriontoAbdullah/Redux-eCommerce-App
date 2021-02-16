@@ -1,6 +1,7 @@
 import currencyFormatter from 'currency-formatter';
 import React, { useEffect, useState } from 'react';
 import { BsDash, BsPlus } from 'react-icons/bs';
+import { FaCheckCircle } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import banner from '../images/custom-banner.jpg';
@@ -15,6 +16,7 @@ const ProductDetails = () => {
 	const { product } = useSelector((state) => state.ProductReducer);
 	const [ quantity, setQuantity ] = useState(1);
 	const [ size, setSize ] = useState('L');
+	const [ isSuccess, setIsSuccess ] = useState(false);
 
 	useEffect(
 		() => {
@@ -31,6 +33,15 @@ const ProductDetails = () => {
 
 	const handleStatusChange = (status) => {
 		setSize(status);
+	};
+
+	if (isSuccess) {
+		setTimeout(() => setIsSuccess(false), 1500);
+	}
+
+	const finalCartHandler = () => {
+		dispatch({ type: 'ADD_TO_CART', payload: { product, quantity, size } });
+		setIsSuccess(true);
 	};
 
 	return (
@@ -55,6 +66,12 @@ const ProductDetails = () => {
 						<span className="details-discount">
 							{currencyFormatter.format(product.discountPrice, { code: 'USD' })}
 						</span>
+
+						{isSuccess && (
+							<span className="ml-5 success-mgs text-success">
+								<FaCheckCircle /> Item added to Cart
+							</span>
+						)}
 					</div>
 
 					<div className="details-info my-4">
@@ -76,10 +93,7 @@ const ProductDetails = () => {
 								<option>L</option>
 								<option>XL</option>
 							</select>
-							<button
-								className="btn-default ml-4"
-								onClick={() => dispatch({ type: 'ADD_TO_CART', payload: { product, quantity, size } })}
-							>
+							<button className="btn-default ml-4" onClick={finalCartHandler}>
 								Add to cart
 							</button>
 						</div>

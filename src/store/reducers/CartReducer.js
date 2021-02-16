@@ -5,7 +5,6 @@ const initState = {
 };
 
 const CartReducer = (state = initState, action) => {
-
 	switch (action.type) {
 		case 'ADD_TO_CART':
 			const { product, quantity, size } = action.payload;
@@ -75,10 +74,18 @@ const CartReducer = (state = initState, action) => {
 
 			return {
 				...state,
-				products: filterProduct, 
-				totalPrice: state.totalPrice - findRemoveProduct.discountPrice * findRemoveProduct.quantity, 
+				products: filterProduct,
+				totalPrice: state.totalPrice - findRemoveProduct.discountPrice * findRemoveProduct.quantity,
 				totalQuantity: state.totalQuantity - findRemoveProduct.quantity
-			}
+			};
+
+		case 'CHECKOUT':
+			return {
+				...state,
+				products: [],
+				totalPrice: 0,
+				totalQuantity: 0
+			};
 
 		default:
 			return state;
